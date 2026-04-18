@@ -71,7 +71,7 @@ function App() {
           className={metodo === 'credito' ? 'active' : ''}
           onClick={() => setMetodo('credito')}
         >
-          Crédito
+          Crédito 
         </button>
         <button 
           className={metodo === 'debito' ? 'active' : ''}
