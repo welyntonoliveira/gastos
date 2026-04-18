@@ -1,0 +1,253 @@
+/* src/pages/Timeline.css */
+
+.timeline-container {
+  min-height: 100vh;
+  color: white;
+  padding-bottom: 80px;
+}
+
+/* Loading */
+.timeline-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #333;
+  border-top-color: #5BA3B8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.back-button {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 0;
+}
+
+.mes-navegacao {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mes-atual {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  min-width: 160px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  color: #1e1e1e;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.nav-arrow:hover {
+  background: #e5a4a4;
+}
+
+/* Cards de resumo */
+.resumo-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+.resumo-card {
+    padding: 8px 4px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: end;
+    border: 2px solid #aa0000;
+}
+
+.resumo-label {
+  font-size: 0.85rem;
+  color: #aa0000;
+}
+
+.resumo-valor {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #aa0000;
+}
+
+/* Timeline */
+.timeline {
+  padding: 0 20px;
+}
+
+.timeline-dia {
+  margin-bottom: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.timeline-dia.hoje {
+  border: 1px solid #5BA3B8;
+}
+
+.dia-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #1e1e1e;
+}
+
+.timeline-dia.tem-gastos .dia-header {
+  background: #1a1a1a;
+}
+
+.timeline-dia.sem-gastos .dia-header {
+  opacity: 0.5;
+}
+
+.dia-data {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.dia-numero {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.dia-semana {
+  font-size: 1rem;
+  color: #888;
+  text-transform: capitalize;
+}
+
+.dia-total {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #E8635A;
+}
+
+.dia-vazio {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Lista de gastos */
+.gastos-lista {
+  background: #1a1a1a;
+  padding: 8px 0;
+}
+
+.gasto-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.gasto-item:last-child {
+  border-bottom: none;
+}
+
+.gasto-indicador {
+  width: 4px;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.gasto-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gasto-categoria {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.gasto-hora {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.gasto-valor {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #E8635A;
+  margin-right: 8px;
+}
+
+.gasto-metodo {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* FAB - Botão flutuante */
+.fab-adicionar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background: #5BA3B8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(91, 163, 184, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 100;
+}
+
+.fab-adicionar:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(91, 163, 184, 0.2);
+}
