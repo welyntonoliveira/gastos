@@ -32,8 +32,6 @@ export const categorias = [
   { id: 'gas', nome: 'Gás', grupoId: 'moradia', valorPadrao: null, ordem: 6, ativa: true },
   { id: 'manutencao_casa', nome: 'Manutenção', grupoId: 'moradia', valorPadrao: null, ordem: 7, ativa: true },
   { id: 'taxa_extra_condominio', nome: 'Taxa extra condomínio', grupoId: 'moradia', valorPadrao: null, ordem: 8, ativa: true },
-  { id: 'compras_eletro', nome: 'Compras Eletro', grupoId: 'moradia', valorPadrao: null, ordem: 9, ativa: true },
-  { id: 'compras_decoracao', nome: 'Compras Decoração', grupoId: 'moradia', valorPadrao: null, ordem: 10, ativa: true },
 
   // ========== ALIMENTAÇÃO ==========
   { id: 'supermercado', nome: 'Supermercado', grupoId: 'alimentacao', valorPadrao: null, ordem: 11, ativa: true },
@@ -55,6 +53,7 @@ export const categorias = [
   { id: 'medico', nome: 'Médico', grupoId: 'saude', valorPadrao: null, ordem: 23, ativa: true },
   { id: 'farmacia', nome: 'Farmácia', grupoId: 'saude', valorPadrao: null, ordem: 24, ativa: true },
   { id: 'academia', nome: 'Academia', grupoId: 'saude', valorPadrao: null, ordem: 25, ativa: true },
+  { id: 'futebol', nome: 'Futebol', grupoId: 'saude', valorPadrao: null, ordem: 25, ativa: true },
 
   // ========== FINANCEIRO ==========
   { id: 'serasa', nome: 'Serasa', grupoId: 'financeiro', valorPadrao: null, ordem: 26, ativa: true },
@@ -73,6 +72,11 @@ export const categorias = [
   { id: 'roupas', nome: 'Roupas', grupoId: 'compras', valorPadrao: null, ordem: 35, ativa: true },
   { id: 'calcados', nome: 'Calçados', grupoId: 'compras', valorPadrao: null, ordem: 36, ativa: true },
   { id: 'acessorios', nome: 'Acessórios', grupoId: 'compras', valorPadrao: null, ordem: 37, ativa: true },
+  { id: 'papelaria', nome: 'Papelaria', grupoId: 'compras', valorPadrao: null, ordem: 38, ativa: true },
+  { id: 'hobby', nome: 'Hobby / Criativo', grupoId: 'compras', valorPadrao: null, ordem: 39, ativa: true },
+  { id: 'compras_eletro', nome: 'Compras Eletro', grupoId: 'compras', valorPadrao: null, ordem: 9, ativa: true },
+  { id: 'compras_decoracao', nome: 'Compras Decoração', grupoId: 'compras', valorPadrao: null, ordem: 10, ativa: true },
+  { id: 'utilidades_casa', nome: 'Utilidades Casa', grupoId: 'compras', valorPadrao: null, ordem: 11, ativa: true },
 
   // ========== EDUCAÇÃO ==========
   { id: 'cursos', nome: 'Cursos', grupoId: 'educacao', valorPadrao: null, ordem: 38, ativa: true },
@@ -82,7 +86,8 @@ export const categorias = [
   // ========== OUTROS ==========
   { id: 'presentes', nome: 'Presentes', grupoId: 'outros', valorPadrao: null, ordem: 45, ativa: true },
   { id: 'doacoes', nome: 'Doações', grupoId: 'outros', valorPadrao: null, ordem: 46, ativa: true },
-  { id: 'imprevistos', nome: 'Imprevistos', grupoId: 'outros', valorPadrao: null, ordem: 47, ativa: true }
+  { id: 'imprevistos', nome: 'Imprevistos', grupoId: 'outros', valorPadrao: null, ordem: 47, ativa: true },
+  { id: 'salao_barbearia', nome: 'Salão/Barbearia', grupoId: 'outros', valorPadrao: null, ordem: 47, ativa: true }, 
 ];
 
 // ========== FUNÇÕES AUXILIARES ==========
