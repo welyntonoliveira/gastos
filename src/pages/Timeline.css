@@ -39,6 +39,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: #f5f5f5;
 }
 
 .back-button {
@@ -82,32 +83,32 @@
 /* Cards de resumo */
 .resumo-cards {
   display: flex;
-  flex-direction: row;
-  gap: 8px;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px 20px;
   overflow-x: auto;
   margin: 16px 0;
 }
 
 .resumo-card {
-    padding: 8px 4px;
-    border-radius: 8px;
+    padding: 16px 8px;
     flex: 1;
     min-width: 120px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    align-items: end;
-    border: 2px solid #aa0000;
+    gap: 8px;
+    align-items: start;
+    border-left: 4px solid #aa0000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .resumo-label {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   color: #aa0000;
 }
 
 .resumo-valor {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #aa0000;
 }
@@ -132,11 +133,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  background: #1e1e1e;
+  background: #2d2d2d;
 }
 
 .timeline-dia.tem-gastos .dia-header {
-  background: #1a1a1a;
+  background: #2d2d2d;
 }
 
 .timeline-dia.sem-gastos .dia-header {
@@ -174,7 +175,7 @@
 
 /* Lista de gastos */
 .gastos-lista {
-  background: #1a1a1a;
+  background: #2d2d2d;
   padding: 8px 0;
 }
 
@@ -201,6 +202,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  align-items: start;
 }
 
 .gasto-categoria {
