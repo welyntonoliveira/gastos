@@ -151,7 +151,7 @@ body {
 
 .botao-gasto:active {
   transform: scale(0.98);
-  background: #3a3a3a;
+  background: rgb(131 131 131 / 15%);
 }
 
 .botao-gasto .label {
