@@ -11,7 +11,6 @@ export const grupos = [
   { id: 'lazer', nome: 'Lazer', cor: '#9B6DB7', corClara: '#B994D4' },             // Roxo suave
   { id: 'compras', nome: 'Compras', cor: '#E87A90', corClara: '#F2A3B3' },         // Rosa queimado
   { id: 'educacao', nome: 'Educação', cor: '#6BA3C7', corClara: '#95C2DD' },       // Azul serenity
-  { id: 'receitas', nome: 'Receitas', cor: '#5BA3B8', corClara: '#89C2D4' },       // Azul turquesa
   { id: 'outros', nome: 'Outros', cor: '#9E9E9E', corClara: '#BDBDBD' }            // Cinza médio
 ];
 

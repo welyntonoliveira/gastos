@@ -218,6 +218,79 @@ body {
   100% { opacity: 0; transform: translateY(-10px); }
 }
 
+/* Adicione ao final do App.css */
+
+/* Info de resultados do filtro */
+.resultado-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.filtro-ativo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2a2a2a;
+  color: #ccc;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.filtro-ativo-tag button {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.filtro-ativo-tag button:hover {
+  color: white;
+}
+
+.contagem-categorias {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Estado vazio */
+.sem-resultados {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
+}
+
+.sem-resultados p {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.sem-resultados button {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Ajuste para sticky funcionar bem */
+.app-container {
+  position: relative;
+  padding-top: 12px;
+}
+
+/* Ocultar barra de rolagem quando não precisar */
+.filtro-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+}
+
 /* Ajustes para telas muito pequenas */
 @media (max-width: 380px) {
   .valor-area input {

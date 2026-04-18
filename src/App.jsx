@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo} from 'react';
 import { createClient } from '@supabase/supabase-js';
+import FiltroGrupos from './components/FiltroGrupos';
 import './App.css'; // Vamos estilizar depois
-import { getCategoriasAtivas, getDespesas, getCategoriasAgrupadas } from './config/categorias';
+import { getCategoriasAtivas, getDespesas, getCategoriasAgrupadas, grupos } from './config/categorias';
 
 
 // Inicializa Supabase com variáveis de ambiente
@@ -21,6 +22,29 @@ function App() {
   const despesas = getDespesas();
   // Ou agrupadas para um futuro accordion
   const categoriasAgrupadas = getCategoriasAgrupadas();
+
+    // NOVO: Estado do filtro
+  const [grupoSelecionado, setGrupoSelecionado] = useState('todos');
+  
+  // Carregar categorias (apenas despesas, exclui receitas)
+  const todasCategorias = useMemo(() => getDespesas(), []);
+  
+  // NOVO: Categorias filtradas por grupo
+  const categoriasFiltradas = useMemo(() => {
+    if (grupoSelecionado === 'todos') {
+      return todasCategorias;
+    }
+    return todasCategorias.filter(cat => cat.grupoId === grupoSelecionado);
+  }, [grupoSelecionado, todasCategorias]);
+  
+  // Contar quantas categorias em cada grupo (para feedback visual)
+  const contagemPorGrupo = useMemo(() => {
+    const contagem = { todos: todasCategorias.length };
+    todasCategorias.forEach(cat => {
+      contagem[cat.grupoId] = (contagem[cat.grupoId] || 0) + 1;
+    });
+    return contagem;
+  }, [todasCategorias]);
 
   // Foca automaticamente no campo ao abrir o app
   useEffect(() => {
@@ -110,7 +134,46 @@ function App() {
       {/* Feedback visual temporário */}
       {feedback && <div className="feedback">{feedback}</div>}
 
+            {/* NOVO: Filtro por Grupo */}
+      <FiltroGrupos 
+        grupoSelecionado={grupoSelecionado}
+        onSelectGrupo={setGrupoSelecionado}
+      />
+
+      {/* Botões de Categorias - Agora filtrados */}
       <div className="botoes-rapidos">
+        {categoriasFiltradas.length === 0 ? (
+          <div className="sem-resultados">
+            <p>😕 Nenhuma categoria neste grupo</p>
+            <button onClick={() => setGrupoSelecionado('todos')}>
+              Ver todas
+            </button>
+          </div>
+        ) : (
+          categoriasFiltradas.map((cat) => (
+            <button
+              key={cat.id}
+              className="botao-gasto"
+              style={{ borderLeftColor: cat.cor }}
+              onClick={() => salvarGasto(cat.nome, cat.valorPadrao)}
+              disabled={loading}
+            >
+              <span className="label">{cat.nome}</span>
+              <span 
+                className="grupo-badge" 
+                style={{ backgroundColor: cat.corClara }}
+              >
+                {cat.grupoNome}
+              </span>
+              {cat.valorPadrao && (
+                <span className="valor-sugerido">R$ {cat.valorPadrao}</span>
+              )}
+            </button>
+          ))
+        )}
+      </div>
+
+      {/* <div className="botoes-rapidos">
         {categorias.map((cat) => (
           <button
             key={cat.id}
@@ -127,7 +190,7 @@ function App() {
             )}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Rodapé com atalho para Dashboard (futuro) */}
       <div className="footer">
