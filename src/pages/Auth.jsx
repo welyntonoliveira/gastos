@@ -3,7 +3,9 @@ import './Style.css';
 
 function Auth() {
   const handleGoogleLogin = async () => {
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const siteUrl = process.env.NODE_ENV === 'production' 
+    ? process.env.NEXT_PUBLIC_SITE_URL 
+    : window.location.origin;
 
     await supabase.auth.signInWithOAuth({
       provider: 'google',
