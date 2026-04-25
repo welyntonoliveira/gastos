@@ -181,6 +181,9 @@ function Timeline() {
                       <span className="gasto-hora">
                         {format(parseISO(gasto.created_at), 'HH:mm')}
                       </span>
+                      <span className="gasto-hora">
+                        {gasto.user_name}
+                      </span>
                     </div>
                     <span className="gasto-valor">
                       R$ {parseFloat(gasto.valor).toFixed(2)}

@@ -54,6 +54,12 @@ function Marcou() {
   const salvarGasto = async (categoria, valorPadrao = null) => {
     // Se o botão tem valor pré-definido (ex: Ifood R$45), usa ele, senão usa o input
     const valorFinal = valorPadrao !== null ? valorPadrao : parseFloat(valor);
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      setFeedback('Faça login novamente');
+      return;
+    }
     
     if (!valorFinal || valorFinal <= 0) {
       setFeedback('Digite um valor primeiro');
@@ -67,7 +73,7 @@ function Marcou() {
     // Insere no Supabase
     const { error } = await supabase
       .from('gastos')
-      .insert([{ valor: valorFinal, categoria, metodo_pagamento: metodo }]);
+      .insert([{ valor: valorFinal, categoria, metodo_pagamento: metodo, user_id: user.id, user_name: user.user_metadata.name }]);
 
     setLoading(false);
 
