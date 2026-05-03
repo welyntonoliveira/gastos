@@ -32,6 +32,7 @@ export const categorias = [
   { id: 'gas', nome: 'Gás', grupoId: 'moradia', valorPadrao: null, ordem: 6, ativa: true },
   { id: 'manutencao_casa', nome: 'Manutenção', grupoId: 'moradia', valorPadrao: null, ordem: 7, ativa: true },
   { id: 'taxa_extra_condominio', nome: 'Taxa extra condomínio', grupoId: 'moradia', valorPadrao: null, ordem: 8, ativa: true },
+  { id: 'plano_celular', nome: 'Plano de Celular', grupoId: 'moradia', valorPadrao: null, ordem: 8, ativa: true },
 
   // ========== ALIMENTAÇÃO ==========
   { id: 'supermercado', nome: 'Supermercado', grupoId: 'alimentacao', valorPadrao: null, ordem: 11, ativa: true },
@@ -54,6 +55,8 @@ export const categorias = [
   { id: 'farmacia', nome: 'Farmácia', grupoId: 'saude', valorPadrao: null, ordem: 24, ativa: true },
   { id: 'academia', nome: 'Academia', grupoId: 'saude', valorPadrao: null, ordem: 25, ativa: true },
   { id: 'futebol', nome: 'Futebol', grupoId: 'saude', valorPadrao: null, ordem: 25, ativa: true },
+  { id: 'autocuidado', nome: 'Autocuidado', grupoId: 'saude', valorPadrao: null, ordem: 25, ativa: true },
+  { id: 'salao_barbearia', nome: 'Salão/Barbearia', grupoId: 'outros', valorPadrao: null, ordem: 47, ativa: true }, 
 
   // ========== FINANCEIRO ==========
   { id: 'serasa', nome: 'Serasa', grupoId: 'financeiro', valorPadrao: null, ordem: 26, ativa: true },
@@ -87,7 +90,6 @@ export const categorias = [
   { id: 'presentes', nome: 'Presentes', grupoId: 'outros', valorPadrao: null, ordem: 45, ativa: true },
   { id: 'doacoes', nome: 'Doações', grupoId: 'outros', valorPadrao: null, ordem: 46, ativa: true },
   { id: 'imprevistos', nome: 'Imprevistos', grupoId: 'outros', valorPadrao: null, ordem: 47, ativa: true },
-  { id: 'salao_barbearia', nome: 'Salão/Barbearia', grupoId: 'outros', valorPadrao: null, ordem: 47, ativa: true }, 
 ];
 
 // ========== FUNÇÕES AUXILIARES ==========
