@@ -252,3 +252,172 @@
   transform: scale(0.95);
   box-shadow: 0 2px 8px rgba(91, 163, 184, 0.2);
 }
+
+/* Estilos para edição e exclusão */
+/* .gasto-acoes {
+  display: flex;
+  gap: 8px;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+} */
+
+.gasto-item:hover .gasto-acoes {
+  opacity: 1;
+}
+
+.btn-editar,
+.btn-excluir-gasto {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn-editar:hover {
+  background-color: #e3f2fd;
+}
+
+.btn-excluir-gasto:hover {
+  background-color: #ffebee;
+}
+
+/* Formulário de edição */
+.gasto-editando {
+  background-color: #f5f5f5;
+  border: 2px solid #2196F3;
+}
+
+.gasto-edicao-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 8px 16px;
+    align-items: flex-start;
+}
+
+.edit-select,
+.edit-input {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.edit-input {
+  width: 100%;
+}
+
+.edicao-acoes {
+  display: flex;
+  gap: 8px;
+  justify-content: end;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.btn-salvar,
+.btn-cancelar-edicao {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.btn-salvar {
+  color: #4CAF50;
+}
+
+.btn-salvar:hover {
+  background-color: #e8f5e9;
+}
+
+.btn-cancelar-edicao {
+  color: #f44336;
+}
+
+.btn-cancelar-edicao:hover {
+  background-color: #ffebee;
+}
+
+/* Modal de confirmação */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-confirmacao {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-confirmacao h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.modal-confirmacao p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.modal-aviso {
+  color: #f44336;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modal-botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.btn-cancelar,
+.btn-excluir {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-cancelar {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancelar:hover {
+  background-color: #bdbdbd;
+}
+
+.btn-excluir {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background-color: #d32f2f;
+}
